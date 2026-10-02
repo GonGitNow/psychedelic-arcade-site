@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="72%">
+      <stop offset="0" stop-color="#2a0a4e"/>
+      <stop offset="0.55" stop-color="#12032a"/>
+      <stop offset="1" stop-color="#05010d"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.18" stop-color="#ffd6f6"/>
+      <stop offset="0.36" stop-color="#ff4fd8"/>
+      <stop offset="0.58" stop-color="#7a3cff"/>
+      <stop offset="0.8" stop-color="#21e6c1"/>
+      <stop offset="1" stop-color="#21e6c1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ringA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4fd8"/>
+      <stop offset="0.5" stop-color="#ffd23f"/>
+      <stop offset="1" stop-color="#21e6c1"/>
+    </linearGradient>
+    <linearGradient id="ringB" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#21e6c1"/>
+      <stop offset="0.5" stop-color="#7a3cff"/>
+      <stop offset="1" stop-color="#ff4fd8"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- Rays -->
+  <g opacity="0.22" stroke="#b07cff" stroke-width="10" stroke-linecap="round">
+    <line x1="512" y1="40" x2="512" y2="200"/>
+    <line x1="512" y1="824" x2="512" y2="984"/>
+    <line x1="40" y1="512" x2="200" y2="512"/>
+    <line x1="824" y1="512" x2="984" y2="512"/>
+    <line x1="178" y1="178" x2="290" y2="290"/>
+    <line x1="734" y1="734" x2="846" y2="846"/>
+    <line x1="846" y1="178" x2="734" y2="290"/>
+    <line x1="290" y1="734" x2="178" y2="846"/>
+  </g>
+  <!-- Petal mandala -->
+  <g fill="none" stroke-width="9" filter="url(#glow)" opacity="0.9">
+    <g stroke="#ff4fd8">
+      <ellipse cx="512" cy="312" rx="62" ry="150"/>
+      <ellipse cx="512" cy="712" rx="62" ry="150"/>
+      <ellipse cx="312" cy="512" rx="150" ry="62"/>
+      <ellipse cx="712" cy="512" rx="150" ry="62"/>
+    </g>
+    <g stroke="#21e6c1" transform="rotate(45 512 512)">
+      <ellipse cx="512" cy="312" rx="56" ry="140"/>
+      <ellipse cx="512" cy="712" rx="56" ry="140"/>
+      <ellipse cx="312" cy="512" rx="140" ry="56"/>
+      <ellipse cx="712" cy="512" rx="140" ry="56"/>
+    </g>
+  </g>
+  <!-- Neon rings -->
+  <circle cx="512" cy="512" r="400" fill="none" stroke="url(#ringA)" stroke-width="16" filter="url(#glow)"/>
+  <circle cx="512" cy="512" r="352" fill="none" stroke="url(#ringB)" stroke-width="7" stroke-dasharray="26 22" filter="url(#glow)" opacity="0.85"/>
+  <!-- Orb and sparkle -->
+  <circle cx="512" cy="512" r="250" fill="url(#orb)" filter="url(#soft)" opacity="0.9"/>
+  <circle cx="512" cy="512" r="200" fill="url(#orb)"/>
+  <path d="M512 250 L548 476 L774 512 L548 548 L512 774 L476 548 L250 512 L476 476 Z" fill="#ffffff" filter="url(#glow)" opacity="0.95"/>
+  <circle cx="512" cy="512" r="38" fill="#ffffff"/>
+</svg>
